@@ -1,0 +1,22 @@
+body {
+    background-color: #ffe4e1; /* Warna pink pastel */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 { color: #ff69b4; }
+
+canvas {
+    background-color: #fff;
+    border: 5px solid #ffb6c1;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
