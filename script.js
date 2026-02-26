@@ -11,9 +11,24 @@ const catWidth = 50;
 let items = [];
 
 // Kontrol Kucing
+// Kontrol Kucing dengan Keyboard (Tetap ada buat cadangan)
 document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft" && catX > 0) catX -= 30;
     if (e.key === "ArrowRight" && catX < canvas.width - catWidth) catX += 30;
+});
+
+// FITUR BARU: Kontrol Kucing dengan Mouse / Kursor
+canvas.addEventListener("mousemove", (e) => {
+    // Menghitung posisi kursor relatif terhadap canvas
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    
+    // Membuat posisi kucing tepat di tengah kursor
+    catX = mouseX - (catWidth / 2);
+
+    // Batasan agar kucing tidak keluar canvas
+    if (catX < 0) catX = 0;
+    if (catX > canvas.width - catWidth) catX = canvas.width - catWidth;
 });
 
 function createItem() {
